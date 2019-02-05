@@ -1,0 +1,36 @@
+<% include ../layouts/header %>
+    <header>
+        <h1>Ntalk</h1>
+        <h4>Lista de contatos</h4>
+    </header>
+    <section>
+        <form class="form" action="/contato" method="post">
+            <input class="form-control" type="text" name="contato[nome]" placeholder="Nome">
+            <input class="form-control" type="text" name="contato[email]" placeholder="E-mail">
+            <br/>
+            <button type="submit">Cadastrar</button>
+        </form>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% contatos.forEach((contato, index) => { %>
+                    <tr>
+                        <td><%- contato.nome %></td>
+                        <td><%- contato.email %></td>
+                        <td>
+                            <a href="/contato/<%- index %>">Detalhes</a>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </section>
+<% include ../layouts/exit %>
+<% include ../layouts/footer %>

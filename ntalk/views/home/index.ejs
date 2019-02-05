@@ -1,0 +1,17 @@
+<% include ../layouts/header %>
+<header>
+    <h1>Ntalk</h1>
+    <h4>Bem-vindo!</h4>
+</header>
+<section>
+    <form class="form" action="/entrar" method="post">
+        <input class="form-control" type="text" name="usuario[nome]"
+        placeholder="Nome">
+        <br>
+        <input class="form-control" type="text" name="usuario[email]"
+        placeholder="E-mail">
+        <br>
+        <button class="btn btn-success" type="submit">Entrar</button>
+    </form>
+</section>
+<% include ../layouts/footer %>
